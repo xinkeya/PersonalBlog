@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>胡新亚的个人博客</title>
+    <link rel="stylesheet" href="../page/css/base.css">
+    <link rel="stylesheet" href="../page/css/guestbook.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <a class="title" href="#">胡新亚的个人博客 | 技术博客</a>
+            <ul class="menu">
+                <li><a href="./index.html">首页</a></li>
+                <li><a href="./sitemap.html">地图</a></li>
+                <li><a href="./about.html">关于</a></li>
+                <li><a href="./guestbook.html">留言</a></li>
+            </ul>
+            <div class="search_bar">
+                <input type="text" placeholder="输入关键词查找">
+                <button>搜索</button>
+            </div>
+        </div>
+    </header>
+    <div class="content">
+        <div class="content_left">
+            <div class="description">
+                <p>欢迎来到胡新亚的个人博客</p>
+                <p style="color:red">此博客只交换技术类个人博客</p>
+                <p style="color:red">不要皮，谢谢</p>
+            </div>
+            <div class="blog_comments">
+                <span class="blog_comments_msg">留言：目前有6条留言</span>
+                <div class="blog_comment">
+                    <span><b>xinxin:发表于2018年06年26日 12:35[回复]</b></span>
+                    <div>ffffffffffffffffffhhhhhhhhhhhh</div>
+                </div>
+                <div class="blog_comment">
+                    <span><b>xinxin:发表于2018年06年26日 12:35[回复]</b></span>
+                    <div>ffffffffffffffffffhhhhhhhhhhhh</div>
+                </div>
+                <div class="blog_comment">
+                    <span><b>xinxin:发表于2018年06年26日 12:35[回复]</b></span>
+                    <div>ffffffffffffffffffhhhhhhhhhhhh</div>
+                </div>
+                <div class="blog_comment">
+                    <span><b>xinxin:发表于2018年06年26日 12:35[回复]</b></span>
+                    <div>ffffffffffffffffffhhhhhhhhhhhh</div>
+                </div>
+                <div class="blog_comment">
+                    <span><b>xinxin:发表于2018年06年26日 12:35[回复]</b></span>
+                    <div>ffffffffffffffffffhhhhhhhhhhhh</div>
+                </div>
+                <div class="blog_comment">
+                    <span><b>xinxin:发表于2018年06年26日 12:35[回复]</b></span>
+                    <div>ffffffffffffffffffhhhhhhhhhhhh</div>
+                </div>
+            </div>
+        </div>
+        <div class="content_right">
+            <div class="right_module" id="random_tags">
+                <div>随机标签云</div>
+                <a href="/" v-for="tag in tags" v-bind:style="{color:randomColor(),fontSize:randomSize()}">{{tag}}</a>
+            </div>
+            <div class="right_module" id="new_hot">
+                <div>最近热门</div>
+                <ul>
+                    <li v-for="temp in titleList"><a v-bind:href="temp.link">{{temp.title}}</a></li>
+                </ul>
+            </div>
+            <div class="right_module" id="new_comments">
+                <div>最近评论</div>
+                <ul>
+                    <li v-for="comment in commentList">
+                        <div>
+                            <span>{{comment.name}}</span>
+                            <span class="pull_right">{{comment.date}}</span>
+                        </div>
+                        <p>{{comment.comment}}</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="right_module">
+                <div>友情链接</div>
+                <span><a href="https://blog.csdn.net/woaijianjiandandande/article/details/52849842?ops_request_misc=&request_id=&biz_id=102&utm_term=%E5%89%8D%E7%AB%AF&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-0-52849842.first_rank_v2_pc_rank_v29&spm=1018.2226.3001.4187">前端技术简介</a></span>
+                <span><a href="https://blog.csdn.net/forever_yq/article/details/49101069">前端学习路线</a>  </span>
+                <span><a href="https://blog.csdn.net/HanXiaoXi_yeal/article/details/112306277">前端面试题精选</a></span>
+                <span><a href="https://blog.csdn.net/pxhdky/article/details/81268125?ops_request_misc=&request_id=&biz_id=102&utm_term=%E5%89%8D%E7%AB%AF&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-3-81268125.first_rank_v2_pc_rank_v29&spm=1018.2226.3001.4187">前端学习笔记</a></span>
+                <span><a href="https://blog.csdn.net/TCB_CloudBase/article/details/89707136?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522163875597416780255294573%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=163875597416780255294573&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-4-89707136.first_rank_v2_pc_rank_v29&utm_term=%E5%89%8D%E7%AB%AF%E5%92%8C%E5%85%A8%E6%A0%88&spm=1018.2226.3001.4187">从前端到全栈</a></span>
+                <span><a href="https://blog.csdn.net/TCB_CloudBase/article/details/89707136?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522163875597416780255294573%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=163875597416780255294573&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-4-89707136.first_rank_v2_pc_rank_v29&utm_term=%E5%89%8D%E7%AB%AF%E5%92%8C%E5%85%A8%E6%A0%88&spm=1018.2226.3001.4187">Node后端开发</a></span>
+                <span><a href="https://blog.csdn.net/m0_37218227/article/details/103617254?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522163875566516780255233955%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=163875566516780255233955&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-2-103617254.first_rank_v2_pc_rank_v29&utm_term=%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E6%95%99%E7%A8%8B&spm=1018.2226.3001.4187">小程序开发</a></span>
+
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <ul>
+            <li>C/C++</li>
+            <li>C/C++</li>
+            <li>C/C++</li>
+            <li>C/C++</li>
+            <li>C/C++</li>
+            <li>C/C++</li>
+            <li>C/C++</li>
+            <li>C/C++</li>
+            <li>C/C++</li>
+        </ul>
+        <p>Copyright skajnfks,amd</p>
+    </footer>
+    <script src="./js/index.js"></script>
+    <script src="./js/base.js"></script>
+</body>
+
+</html>
